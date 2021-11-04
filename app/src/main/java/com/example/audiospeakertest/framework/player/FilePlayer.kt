@@ -1,10 +1,14 @@
 package com.example.audiospeakertest.framework.player
 
 import android.content.Context
+import android.media.MediaPlayer
+import com.example.audiospeakertest.R
 import com.example.audiospeakertest.domain.player.Player
 
-class FilePlayer(context: Context) : Player {
+
+class FilePlayer(private val context: Context) : Player {
     override suspend fun play() {
-        TODO("Not yet implemented")
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(context, R.raw.audio)
+        mediaPlayer.start()
     }
 }
