@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AudioSpeakerTest</string>
+    <string name="play_file">Play File</string>
 </resources>
