@@ -15,8 +15,8 @@ fun MainScreen() {
 
     val playing = model.playing.value
 
-    Button(model::playFile, enabled = !playing) {
-        Text(text = stringResource(R.string.play_file))
+    Button(if (playing) model::stopFile else model::playFile) {
+        Text(text = stringResource(if (playing) R.string.stop else R.string.play_file))
     }
 }
 
