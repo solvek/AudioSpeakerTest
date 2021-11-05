@@ -2,7 +2,8 @@ package com.example.audiospeakertest.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.audiospeakertest.domain.player.Player
+import com.example.audiospeakertest.framework.AudioSystem
+import com.example.audiospeakertest.framework.devices.vo.AndroidOutputDevice
 import com.example.audiospeakertest.usecases.DevicesInteractor
 import com.example.audiospeakertest.usecases.PlayInteractor
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,34 +18,41 @@ class MainViewModel @Inject constructor(
 
     val playing = androidx.compose.runtime.mutableStateOf(false)
 
-    private lateinit var filePlayer: Player
-
-    init {
-        val outputs = devicesInteractor.outputDevices
-        Timber.tag(TAG).i("Output devices: $outputs")
+    private val filePlayer by lazy {
+        playInteractor.filePlayer
+    }
+    private val outputs by lazy {
+        devicesInteractor.outputDevices.also {
+            Timber.tag(TAG).i("Output devices (${it.size}): $it")
+        }
     }
 
     fun playFile(){
-        Timber.tag(TAG).i("Button pressed")
+        AudioSystem.print()
 
-        ensureFilePlayer()
+        Timber.tag(TAG).i("Button pressed")
 
         viewModelScope.launch {
             playing.value = true
-            filePlayer.play()
+            val index = 1
+            val output = outputs[index]
+            setOutput(index)
+            Timber.tag(TAG).i("Playing to output $output")
+            filePlayer.play(output)
             playing.value = false
         }
     }
 
     fun stopFile(){
-        ensureFilePlayer()
         filePlayer.stop()
         playing.value = false
     }
 
-    private fun ensureFilePlayer() {
-        if (this::filePlayer.isInitialized) return
-        filePlayer = playInteractor.filePlayer
+    private fun setOutput(index: Int){
+        outputs.forEachIndexed{ idx, output ->
+            val deviceInfo = (output as AndroidOutputDevice).deviceInfo
+            AudioSystem.setDeviceConnectionState(output.id, idx == index, "", "")
+        }
     }
 
     companion object {
