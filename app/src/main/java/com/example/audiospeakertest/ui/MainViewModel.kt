@@ -34,7 +34,7 @@ class MainViewModel @Inject constructor(
 
         viewModelScope.launch {
             playing.value = true
-            val index = 1
+            val index = 0
             val output = outputs[index]
             setOutput(index)
             Timber.tag(TAG).i("Playing to output $output")
@@ -51,7 +51,8 @@ class MainViewModel @Inject constructor(
     private fun setOutput(index: Int){
         outputs.forEachIndexed{ idx, output ->
             val deviceInfo = (output as AndroidOutputDevice).deviceInfo
-            AudioSystem.setDeviceConnectionState(output.id, idx == index, "", "")
+            val res = AudioSystem.setDeviceConnectionState(deviceInfo.type, idx == index, "", "")
+            Timber.tag(TAG).i("Setting value for device (id=$${output.id})${deviceInfo.productName}/${deviceInfo.type}, result $res")
         }
     }
 
