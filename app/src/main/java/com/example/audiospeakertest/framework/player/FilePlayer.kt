@@ -1,19 +1,21 @@
 package com.example.audiospeakertest.framework.player
 
+import android.app.PendingIntent.getService
 import android.content.Context
 import android.media.MediaPlayer
 import com.example.audiospeakertest.R
 import com.example.audiospeakertest.data.vo.OutputDevice
 import com.example.audiospeakertest.domain.player.Player
+import com.example.audiospeakertest.framework.system.AudioSystem
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 
-class FilePlayer(context: Context) : Player {
-    private val mediaPlayer: MediaPlayer = MediaPlayer.create(context, R.raw.audio)
+class FilePlayer(private val context: Context) : Player {
 
     override suspend fun play(device: OutputDevice) {
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(context, R.raw.audio)
         suspendCoroutine<Unit> { cont ->
             try {
                 mediaPlayer.setOnCompletionListener {
@@ -30,6 +32,6 @@ class FilePlayer(context: Context) : Player {
     }
 
     override fun stop() {
-        mediaPlayer.pause()
+//        mediaPlayer.pause()
     }
 }
