@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="190dp" android:layout_height="wrap_content" android:layout_weight="0.5">
+    <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:gravity="center" android:id="@+id/auto_config_event_button_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/tiny_margin" android:text="@string/auto_text_on_connect" android:layout_weight="0.5" android:textAlignment="center"/>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@+id/auto_config_connect_button" android:background="@drawable/welcome_screen_button_background" android:padding="@dimen/small_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center" android:id="@+id/auto_config_action_icon" android:layout_width="60dp" android:layout_height="60dp" app:srcCompat="@drawable/switch_vector_cute_speakers"/>
+            </FrameLayout>
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body2" android:gravity="center" android:id="@+id/auto_config_action_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/action_output_mute" android:textAlignment="center"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:layout_gravity="bottom|right|center_vertical|center_horizontal|center" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginRight="15dp" android:layout_marginBottom="15dp" app:srcCompat="@drawable/ic_edit_icon"/>
+    </FrameLayout>
+</LinearLayout>

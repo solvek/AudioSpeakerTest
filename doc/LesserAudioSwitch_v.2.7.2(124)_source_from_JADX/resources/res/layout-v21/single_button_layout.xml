@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" app:bounded_height="51dp">
+    <com.nordskog.LesserAudioSwitch.util.SpacerLayout android:layout_gravity="center_vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="1dp" app:shrink_direction="1" app:spacing="50dp">
+        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <FrameLayout android:id="@+id/switchConfigContainer" android:visibility="visible" android:layout_width="50dp" android:layout_height="match_parent">
+                <ImageButton android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/switchConfigButton" android:background="@drawable/button_grey_circle" android:layout_width="50dp" android:layout_height="match_parent" android:scaleType="centerInside" app:srcCompat="@drawable/ic_settings_cog_icon"/>
+            </FrameLayout>
+            <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+            <FrameLayout android:layout_width="160dp" android:layout_height="match_parent">
+                <Button android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/modeSetButton" android:background="@drawable/button_color" android:paddingLeft="30dp" android:layout_width="160dp" android:layout_height="match_parent" android:text="@string/status_output_headphone"/>
+                <ImageView android:layout_gravity="left|center_vertical|center_horizontal|center" android:id="@+id/modeSetIcon" android:layout_width="35dp" android:layout_height="match_parent" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:antialias="true" android:elevation="20dp" app:srcCompat="@drawable/switch_vector_boring_headphones"/>
+            </FrameLayout>
+            <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+            <ImageButton android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/modeConfigButton" android:background="@drawable/button_grey_circle" android:layout_width="50dp" android:layout_height="match_parent" android:scaleType="centerInside" app:srcCompat="@drawable/ic_microphone"/>
+        </LinearLayout>
+    </com.nordskog.LesserAudioSwitch.util.SpacerLayout>
+</merge>

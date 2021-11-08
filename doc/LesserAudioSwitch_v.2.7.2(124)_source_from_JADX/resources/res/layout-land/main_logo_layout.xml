@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageButton android:textColor="@android:color/white" android:id="@+id/debug_shortcut" android:background="@drawable/button_grey_circle" android:visibility="gone" android:layout_width="50dp" android:layout_height="50dp" android:layout_margin="10dp" android:scaleType="fitXY" app:srcCompat="@drawable/unlock_character_no_outline"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/imageView1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="10dp" app:srcCompat="@drawable/backgroundcharacter"/>
+        <LinearLayout android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:orientation="horizontal" android:clipChildren="false" android:layout_width="match_parent" android:layout_height="match_parent">
+            <Space android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+            <Space android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+                <androidx.appcompat.widget.AppCompatImageButton android:textColor="@android:color/white" android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:id="@+id/themeButton" android:background="@drawable/button_grey_circle" android:visibility="visible" android:layout_width="50dp" android:layout_height="50dp" android:scaleType="fitXY" app:srcCompat="@drawable/unlock_character_no_outline"/>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

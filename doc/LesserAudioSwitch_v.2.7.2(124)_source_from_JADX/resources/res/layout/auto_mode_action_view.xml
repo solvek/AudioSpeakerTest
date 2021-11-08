@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="left|center_vertical|center_horizontal|center" android:orientation="horizontal" android:background="@drawable/welcome_screen_button_background_blank" android:paddingLeft="@dimen/small_margin" android:paddingTop="@dimen/tiny_margin" android:paddingBottom="@dimen/tiny_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/tiny_margin">
+    <ImageView android:layout_gravity="center" android:id="@+id/auto_config_action_icon" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="10dp" app:srcCompat="@drawable/switch_vector_cute_bluetooth"/>
+    <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+    <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:gravity="center" android:id="@+id/auto_config_action_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/status_output_bluetooth"/>
+</LinearLayout>

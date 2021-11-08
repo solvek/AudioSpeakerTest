@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/auto_config_event_icon" android:layout_width="30dp" android:layout_height="30dp" app:srcCompat="@drawable/switch_vector_cute_bluetooth"/>
+            <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:gravity="center" android:id="@+id/auto_config_event_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/status_output_bluetooth"/>
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" "/>
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_text_event"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/small_margin">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <include android:id="@+id/auto_config_connect_button" layout="@layout/auto_mode_event_view_button"/>
+            <Space android:layout_width="@dimen/small_margin" android:layout_height="match_parent"/>
+            <include android:id="@+id/auto_config_disconnect_button" layout="@layout/auto_mode_event_view_button"/>
+        </LinearLayout>
+        <FrameLayout android:layout_gravity="center" android:id="@+id/auto_config_not_enabled_cover" android:background="@drawable/auto_config_not_enabled_cover" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Title" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/auto_text_support_not_enabled_suffix"/>
+                <Button android:gravity="center" android:layout_gravity="center" android:id="@+id/open_settings_button" android:background="@drawable/welcome_screen_button_background" android:paddingLeft="@dimen/small_margin" android:paddingRight="@dimen/small_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/significant_margin" android:text="@string/open_settings_button"/>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

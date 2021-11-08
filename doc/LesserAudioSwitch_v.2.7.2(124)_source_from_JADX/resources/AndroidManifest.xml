@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:versionCode="124" android:versionName="2.7.2" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.nordskog.LesserAudioSwitch" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="30" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:supportsRtl="true" android:roundIcon="@mipmap/ic_launcher_round" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity android:name="com.nordskog.LesserAudioSwitch.p002ui.auto.AutoActivity" android:parentActivityName="com.nordskog.LesserAudioSwitch.ui.MainActivity"/>
+        <activity android:name="com.nordskog.LesserAudioSwitch.p002ui.MainActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_settings" android:name="com.nordskog.LesserAudioSwitch.p002ui.SettingsActivity" android:launchMode="singleTop" android:parentActivityName="com.nordskog.LesserAudioSwitch.ui.MainActivity"/>
+        <activity android:name="com.nordskog.LesserAudioSwitch.p002ui.GenericUnlockActivity" android:launchMode="singleTop"/>
+        <activity android:name="com.nordskog.LesserAudioSwitch.p002ui.WidgetConfigActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.nordskog.LesserAudioSwitch.SoundBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.nordskog.LesserAudioSwitch.SPEAKER"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.HEADPHONES"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.MIC_DISCONNECTED"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.BLUETOOTH"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.USB"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.CAST"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.MUTE"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.UNMUTE"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.NOTIFICATION_ON"/>
+                <action android:name="com.nordskog.LesserAudioSwitch.NOTIFICATION_OFF"/>
+                <action android:name="android.intent.action.HEADSET_PLUG"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"/>
+                <action android:name="android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.nordskog.LesserAudioSwitch.widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_provider_info"/>
+        </receiver>
+        <service android:name="com.nordskog.LesserAudioSwitch.service.HeadphonesMonitorService"/>
+        <service android:label="@string/action_output_speaker" android:icon="@drawable/tile_speaker_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$SpeakerSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_headphones" android:icon="@drawable/tile_headphones_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$HeadphoneseSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_usb" android:icon="@drawable/tile_usb_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$USBSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_bluetooth" android:icon="@drawable/tile_bluetooth_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$BluetoothSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_cast" android:icon="@drawable/tile_cast_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$CastSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_mute" android:icon="@drawable/tile_mute_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$MuteSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/action_output_unmute" android:icon="@drawable/tile_unmute_active" android:name="com.nordskog.LesserAudioSwitch.quicksettingtile.BaseTile$UnmuteSwitchTile" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="3.0.0"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.android.billingclient.api.ProxyBillingActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+    </application>
+</manifest>

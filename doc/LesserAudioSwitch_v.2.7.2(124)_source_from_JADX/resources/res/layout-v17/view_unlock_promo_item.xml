@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@+id/content" android:paddingLeft="@dimen/small_margin" android:paddingRight="@dimen/small_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin">
+        <ImageView android:layout_gravity="center" android:id="@+id/promo_item_icon" android:background="@drawable/button_blue_circle" android:padding="5dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_weight="0" app:srcCompat="@drawable/ic_iap_icon_auto"/>
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:gravity="center_horizontal" android:id="@+id/promo_item_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Remove ads!" android:textAlignment="center"/>
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Small" android:gravity="center_horizontal" android:id="@+id/promo_item_title2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Headphones detected required this is very long text to fill in" android:textAlignment="center"/>
+        </LinearLayout>
+        <ImageButton android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/promo_item_details" android:background="@drawable/button_grey_circle" android:layout_width="50dp" android:layout_height="50dp" android:layout_weight="0" app:srcCompat="@drawable/ic_help_icon"/>
+    </LinearLayout>
+</FrameLayout>

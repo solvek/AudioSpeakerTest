@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:background="@drawable/auto_config_not_enabled_cover" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@+id/unlock_awaiting_respnse_loading" android:layout_width="40dp" android:layout_height="40dp" app:srcCompat="@drawable/ic_loading_icon"/>
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Title" android:layout_gravity="center" android:id="@+id/purchase_item_price_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/text_margin" android:text="@string/iap_please_wait"/>
+        </LinearLayout>
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/text_margin" android:text="@string/iap_awaiting_confirmation"/>
+    </LinearLayout>
+</FrameLayout>

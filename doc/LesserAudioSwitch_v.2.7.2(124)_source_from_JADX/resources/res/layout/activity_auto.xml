@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:scrollbarStyle="outsideOverlay" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:fadingEdgeLength="25dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:requiresFadingEdge="vertical">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="75dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_horizontal_margin">
+            <include android:id="@+id/auto_config_event_headphones_container" layout="@layout/auto_mode_event_view"/>
+            <include android:id="@+id/auto_config_event_bluetooth_container" layout="@layout/auto_mode_event_view"/>
+            <include android:id="@+id/auto_config_event_usb_container" layout="@layout/auto_mode_event_view"/>
+        </LinearLayout>
+    </ScrollView>
+    <Button android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:id="@+id/auto_done_button" android:background="@drawable/welcome_screen_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/activity_horizontal_margin" android:text="@string/button_done"/>
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:id="@+id/radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonAutoMicContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <Space android:layout_width="36dp" android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/radioButtonAutoMic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_auto"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonInternalMicContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/switch_vector_boring_internal"/>
+            <RadioButton android:id="@+id/radioButtonInternalMic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_internal_mic"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/inputConfigInternalSeparator" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:background="@color/transparent_white" android:layout_width="match_parent" android:layout_height="2dp" android:layout_margin="@dimen/small_margin"/>
+            <TextView android:id="@+id/inputConfigMicrophoneMaybeIgnoredForInputMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/small_margin" android:layout_marginRight="@dimen/small_margin" android:layout_marginBottom="@dimen/small_margin" android:text="@string/config_message_disable_internal_mic_maybe_required"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonHeadsetMicMicContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/switch_vector_boring_headphones"/>
+            <RadioButton android:id="@+id/radioButtonHeadsetMicMic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_headset_mic"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonUsbMicContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/switch_vector_boring_usb"/>
+            <RadioButton android:id="@+id/radioButtonUsbMic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_usb_mic"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonDoNothingContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <Space android:layout_width="36dp" android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/radioButtonDoNothing" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_leave_alone"/>
+        </LinearLayout>
+        <FrameLayout android:background="@color/transparent_white" android:layout_width="match_parent" android:layout_height="2dp" android:layout_margin="@dimen/small_margin"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/small_margin" android:layout_marginRight="@dimen/small_margin" android:layout_marginBottom="@dimen/small_margin" android:text="@string/warning_bluetooth_configured_input_only_used_if_no_bt_mic"/>
+        <LinearLayout android:gravity="center" android:id="@+id/radioButtonBluetoothMicAlwaysContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/switch_vector_boring_bluetooth"/>
+            <RadioButton android:id="@+id/radioButtonBluetoothMicAlways" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_bluetooth_mic_record_with_bluetooth_output"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

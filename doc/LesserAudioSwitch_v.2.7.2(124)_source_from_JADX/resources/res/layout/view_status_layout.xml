@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" app:bounded_width="300dp">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/status_view_top_background_container" android:background="@drawable/status_view_background_top" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_gravity="center" android:orientation="horizontal" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:visibility="visible" android:layout_width="16dp" android:layout_height="16dp" app:srcCompat="@drawable/ic_output"/>
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/white_text_color" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Output"/>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/status_view_background_top" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:visibility="visible" android:layout_width="16dp" android:layout_height="16dp" app:srcCompat="@drawable/ic_microphone"/>
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/white_text_color" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Input"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/status_view_bottom_background_container" android:background="@drawable/status_view_background_outline" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <FrameLayout android:layout_gravity="center" android:orientation="horizontal" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/status_output_icon" android:layout_width="35dp" android:layout_height="35dp" android:layout_marginRight="@dimen/tiny_margin" app:srcCompat="@drawable/widget_boring_headphones"/>
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@+id/status_output_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Speakers"/>
+            </LinearLayout>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/status_output_loading_icon" android:visibility="gone" android:layout_width="35dp" android:layout_height="35dp" style="?android:attr/progressBarStyle"/>
+        </FrameLayout>
+        <FrameLayout android:background="@color/default_color" android:visibility="gone" android:layout_width="2dp" android:layout_height="match_parent" android:layout_weight="0"/>
+        <FrameLayout android:layout_gravity="center" android:orientation="horizontal" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/status_input_icon" android:layout_width="35dp" android:layout_height="35dp" android:layout_marginRight="@dimen/tiny_margin" app:srcCompat="@drawable/microphone_vector"/>
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/white_text_color" android:layout_gravity="center" android:id="@+id/status_input_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Internal"/>
+            </LinearLayout>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/status_input_loading_icon" android:visibility="gone" android:layout_width="35dp" android:layout_height="35dp" style="?android:attr/progressBarStyle"/>
+        </FrameLayout>
+    </LinearLayout>
+</merge>

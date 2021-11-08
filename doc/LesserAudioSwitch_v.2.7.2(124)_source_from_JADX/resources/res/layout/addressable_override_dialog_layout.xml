@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RadioButton android:id="@+id/radioButtonAddressableOverrideAuto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:text="@string/pie_addressable_override_mode_auto"/>
+    <RadioButton android:id="@+id/radioButtonAddressableOverrideNormal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:text="@string/pie_addressable_override_mode_normal"/>
+    <RadioButton android:id="@+id/radioButtonAddressableOverrideAddressable" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:text="@string/pie_addressable_override_mode_addressable"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dialog_margin">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dialog_margin" android:text="@string/pie_addressable_override_status_message"/>
+        <TextView android:id="@+id/addressable_override_detected_mode_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dialog_margin"/>
+    </LinearLayout>
+</RadioGroup>

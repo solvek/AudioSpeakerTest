@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/background_color_grey" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_gravity="top|right|center_vertical|center_horizontal|center" android:id="@+id/dialog_close_icon" android:padding="@dimen/small_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ic_close_icon"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/background" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Title" android:layout_gravity="center" android:id="@+id/activity_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:text="@string/iap_unlock_title"/>
+        <com.nordskog.LesserAudioSwitch.p002ui.BoundedLinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" app:bounded_width="500dp">
+            <include android:id="@+id/unlock_promo_remove_ads" android:visibility="gone" layout="@layout/view_unlock_promo_item"/>
+            <include android:id="@+id/unlock_promo_auto_switch" layout="@layout/view_unlock_promo_item"/>
+            <include android:id="@+id/unlock_promo_widgets" layout="@layout/view_unlock_promo_item"/>
+        </com.nordskog.LesserAudioSwitch.p002ui.BoundedLinearLayout>
+        <com.nordskog.LesserAudioSwitch.p002ui.BoundedFrameLayout android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" app:bounded_width="400dp">
+            <com.nordskog.LesserAudioSwitch.p002ui.PurchaseItemView android:id="@+id/unlock_purchase_item" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <include android:id="@+id/unlock_awaiting_response_cover" android:visibility="gone" layout="@layout/dialog_wait_confirmation_dialog"/>
+        </com.nordskog.LesserAudioSwitch.p002ui.BoundedFrameLayout>
+        <Space android:layout_width="match_parent" android:layout_height="@dimen/small_margin"/>
+    </LinearLayout>
+</FrameLayout>

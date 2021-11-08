@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:id="@+id/radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp">
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/config_headphone_prong_title"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/small_margin" android:text="@string/config_headphone_prong_message"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <Space android:layout_width="36dp" android:layout_height="wrap_content"/>
+            <RadioButton android:id="@+id/radioButtonHeadsetConfigAutoPole" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/action_input_auto"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/config_vector_boring_3_pole"/>
+            <RadioButton android:id="@+id/radioButtonHeadsetConfig3Pole" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/config_headphone_headset_3_pole"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+            <ImageView android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/config_vector_boring_4_pole"/>
+            <RadioButton android:id="@+id/radioButtonHeadsetConfig4Pole" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/config_headphone_headset_4_pole"/>
+        </LinearLayout>
+        <FrameLayout android:background="@color/transparent_white" android:layout_width="match_parent" android:layout_height="2dp" android:layout_margin="@dimen/small_margin"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp">
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pref_title_prevent_accidental_disconnect"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/small_margin" android:text="@string/pref_description_prevent_accidental_disconnect"/>
+            <LinearLayout android:gravity="center" android:id="@+id/checkboxPreventAccidentalDisconnectContainer" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="top|center_vertical|center_horizontal|center" android:layout_width="36dp" android:layout_height="wrap_content" app:srcCompat="@drawable/config_vector_boring_accident_disconnect"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <CheckBox android:id="@+id/checkboxPreventAccidentalDisconnect" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pref_title_prevent_accidental_disconnect"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

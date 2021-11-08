@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="50dp" app:bounded_height="51dp">
+    <com.nordskog.LesserAudioSwitch.util.SpacerLayout android:layout_gravity="center_vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="1dp" app:shrink_direction="1" app:spacing="50dp">
+        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <FrameLayout android:id="@+id/switchConfigContainer" android:visibility="invisible" android:layout_width="50dp" android:layout_height="match_parent">
+                <ImageButton android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/switchConfigButton" android:background="@drawable/button_grey_circle" android:layout_width="50dp" android:layout_height="match_parent" android:scaleType="centerInside" app:srcCompat="@drawable/ic_settings_cog_icon"/>
+            </FrameLayout>
+            <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+            <Button android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/muteButton" android:background="@drawable/button_half_left" android:layout_width="78dp" android:layout_height="match_parent" android:text="@string/action_output_short_mute"/>
+            <Space android:layout_width="4dp" android:layout_height="wrap_content"/>
+            <Button android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/unmuteButton" android:background="@drawable/button_half_right" android:layout_width="78dp" android:layout_height="match_parent" android:text="@string/action_output_short_unmute"/>
+            <Space android:layout_width="5dp" android:layout_height="wrap_content"/>
+            <ImageButton android:textColor="@android:color/white" android:layout_gravity="center" android:id="@+id/mute_unmute_help_button" android:background="@drawable/button_grey_circle" android:visibility="invisible" android:layout_width="50dp" android:layout_height="match_parent" app:srcCompat="@drawable/ic_help_icon"/>
+        </LinearLayout>
+    </com.nordskog.LesserAudioSwitch.util.SpacerLayout>
+</merge>

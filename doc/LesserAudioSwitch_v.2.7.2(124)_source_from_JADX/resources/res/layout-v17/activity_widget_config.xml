@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@color/background_color" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:layout_gravity="center" android:id="@+id/widget_configure_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/significant_margin" android:text="@string/widget_config_title" android:textAlignment="center"/>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ScrollView android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/activity_horizontal_margin">
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="100dp">
+                            <include android:id="@+id/widget_mute_button" layout="@layout/single_widget_button"/>
+                            <include android:id="@+id/widget_unmute_button" layout="@layout/single_widget_button"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <include android:id="@+id/widget_speakers_button" layout="@layout/single_widget_button"/>
+                            <include android:id="@+id/widget_headphones_button" layout="@layout/single_widget_button"/>
+                            <include android:id="@+id/widget_bluetooth_button" layout="@layout/single_widget_button"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="100dp">
+                            <include android:id="@+id/widget_usb_button" layout="@layout/single_widget_button"/>
+                            <include android:id="@+id/widget_cast_button" layout="@layout/single_widget_button"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_horizontal_margin">
+        <Button android:id="@+id/widget_config_cute" android:background="@drawable/welcome_screen_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/widget_config_cute_widgets"/>
+        <TextView android:gravity="center_horizontal" android:layout_width="100dp" android:layout_height="wrap_content" android:text="@string/widget_config_style" android:textAlignment="center"/>
+        <Button android:id="@+id/widget_config_boring" android:background="@drawable/welcome_screen_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/widget_config_boring_widgets"/>
+    </LinearLayout>
+    <Button android:layout_gravity="center" android:id="@+id/widget_config_done_Button" android:background="@drawable/welcome_screen_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/significant_margin" android:text="@string/button_done"/>
+</LinearLayout>

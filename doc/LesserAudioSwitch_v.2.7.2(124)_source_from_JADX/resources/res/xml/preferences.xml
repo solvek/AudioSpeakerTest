@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_notification" android:key="@string/pref_key_notification" android:summary="@string/pref_description_notification" android:defaultValue="false"/>
+    <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_bluetooth_mode" android:key="@string/pref_key_bluetooth_mode" android:summary="@string/pref_description_bluetooth_mode" android:defaultValue="true"/>
+    <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_usb_mode" android:key="@string/pref_key_usb_mode" android:summary="@string/pref_description_usb_mode" android:defaultValue="true"/>
+    <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_cast_mode" android:key="@string/pref_key_cast_mode" android:summary="@string/pref_description_cast_mode" android:defaultValue="false"/>
+    <PreferenceCategory>
+        <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_force_mic" android:key="@string/pref_key_force_mic" android:summary="@string/pref_description_force_mic" android:defaultValue="true"/>
+        <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_disable_internal_mic" android:key="@string/pref_key_disable_internal_mic" android:summary="@string/pref_description_disable_internal_mic" android:defaultValue="false"/>
+        <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_mute_speaker" android:key="@string/pref_key_mute_speaker" android:summary="@string/pref_description_mute_speaker" android:defaultValue="false"/>
+        <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_disable_earpiece" android:key="@string/pref_key_disable_earpiece" android:summary="@string/pref_description_disable_earpiece" android:defaultValue="false"/>
+        <com.nordskog.LesserAudioSwitch.util.LineBreakCheckboxPreference android:title="@string/pref_title_display_mute_unmute_buttons" android:key="@string/pref_key_display_mute_unmute_buttons" android:summary="@string/pref_description_display_mute_unmute_buttons" android:defaultValue="false"/>
+        <Preference android:title="@string/pref_title_advanced_button" android:key="@string/pref_key_advanced_button"/>
+    </PreferenceCategory>
+</PreferenceScreen>

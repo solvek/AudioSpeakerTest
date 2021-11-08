@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <FrameLayout android:layout_gravity="top|center_vertical|center_horizontal|center" android:id="@+id/purchase_item_short_error_container" android:background="@drawable/purchase_item_warning" android:paddingLeft="@dimen/significant_margin" android:paddingTop="@dimen/tiny_margin" android:paddingRight="@dimen/significant_margin" android:paddingBottom="@dimen/tiny_margin" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textColor="@color/warning_color" android:id="@+id/purchase_item_short_error_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Error"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp">
+            <FrameLayout android:layout_gravity="center" android:background="@drawable/unlock_pro_promo_item_background" android:layout_width="match_parent" android:layout_height="80dp"/>
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/content" android:paddingLeft="@dimen/small_margin" android:paddingRight="@dimen/small_margin" android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:layout_gravity="center" android:id="@+id/purchase_item_icon" android:layout_width="100dp" android:layout_height="100dp" android:layout_marginTop="@dimen/tiny_margin" android:layout_marginRight="@dimen/small_margin" android:layout_marginBottom="@dimen/tiny_margin" android:scaleType="fitXY" app:srcCompat="@drawable/unlock_character"/>
+                <include android:id="@+id/purchase_item_purchase_button" layout="@layout/purchase_button"/>
+                <include android:id="@+id/purchase_item_error_button" layout="@layout/warning_button"/>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</merge>

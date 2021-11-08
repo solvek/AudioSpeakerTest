@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center" android:orientation="horizontal" android:background="@color/notification_background_color" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size">
+    <FrameLayout android:id="@+id/notification_widget_container_mute" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_mute" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_mute" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_mute" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_unmute" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_unmute" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_unmute" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_unmute" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_speakers" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_speakers" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_speakers" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_speakers" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_headphones" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_headphones" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_headphones" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_headphones" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_bluetooth" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_bluetooth" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_bluetooth" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_bluetooth" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_usb" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_usb" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_usb" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_usb" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/notification_widget_container_cast" android:layout_width="match_parent" android:layout_height="@dimen/notification_widget_bar_size" android:layout_weight="1" android:alpha="0.5">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/notification_widget_size">
+            <ImageView android:id="@+id/notification_widget_icon_cast" android:src="@drawable/switch_bitmap_boring_speakers" style="@style/notification_widget_icon"/>
+            <TextView android:id="@+id/notification_widget_text_cast" android:text="Button" style="@style/notification_widget_text"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/notification_widget_spacer_cast" style="@style/notification_widget_spacer"/>
+    </FrameLayout>
+</LinearLayout>
