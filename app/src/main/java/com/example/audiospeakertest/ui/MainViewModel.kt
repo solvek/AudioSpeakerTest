@@ -2,10 +2,10 @@ package com.example.audiospeakertest.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.audiospeakertest.framework.bt.BluetoothScanner
 import com.example.audiospeakertest.framework.devices.vo.AndroidOutputDevice
 import com.example.audiospeakertest.framework.system.AudioSystem
 import com.example.audiospeakertest.framework.system.getAddress2
-import com.example.audiospeakertest.hack.C0200av
 import com.example.audiospeakertest.usecases.DevicesInteractor
 import com.example.audiospeakertest.usecases.PlayInteractor
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,6 +17,9 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
         private val playInteractor: PlayInteractor,
         devicesInteractor: DevicesInteractor) : ViewModel() {
+
+    @Inject
+    lateinit var scanner: BluetoothScanner
 
     val playing = androidx.compose.runtime.mutableStateOf(false)
 
@@ -34,12 +37,20 @@ class MainViewModel @Inject constructor(
 
         Timber.tag(TAG).i("Button pressed")
 
+        scanner.scan()
+
         viewModelScope.launch {
             playing.value = true
             val index = 0
             val output = outputs[index]
-            setOutput(index)
+//            setOutput(index)
             Timber.tag(TAG).i("Playing to output $output")
+
+            val res1 = AudioSystem.setDeviceConnectionState(-1, false, "", "")
+            Timber.tag(TAG).i("Result: $res1")
+            val res2 = AudioSystem.setDeviceConnectionState(AudioSystem.DEVICE_OUT_SPEAKER, true, "", "")
+            Timber.tag(TAG).i("Result: $res2")
+
             filePlayer.play(output)
             playing.value = false
         }
@@ -58,7 +69,7 @@ class MainViewModel @Inject constructor(
             val type = deviceInfo.type
             val connectionState = AudioSystem.getDeviceConnectionState(type, "")
             val address = deviceInfo.getAddress2()
-            val res = AudioSystem.setDeviceConnectionState(deviceInfo.type, idx == index, address, name)
+            val res = AudioSystem.setDeviceConnectionState(deviceInfo.id, idx == index, address, name)
             Timber.tag(TAG).i("Device $name, type = $type, address = $address, connectionState = $connectionState, id=${output.id}, result = $res")
         }
     }
