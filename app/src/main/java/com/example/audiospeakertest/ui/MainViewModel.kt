@@ -1,8 +1,9 @@
 package com.example.audiospeakertest.ui
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.audiospeakertest.framework.bt.BluetoothScanner
+import com.example.audiospeakertest.framework.bt.BluetoothInteractor
 import com.example.audiospeakertest.framework.devices.vo.AndroidOutputDevice
 import com.example.audiospeakertest.framework.system.AudioSystem
 import com.example.audiospeakertest.framework.system.getAddress2
@@ -19,7 +20,7 @@ class MainViewModel @Inject constructor(
         devicesInteractor: DevicesInteractor) : ViewModel() {
 
     @Inject
-    lateinit var scanner: BluetoothScanner
+    lateinit var bluetoothInteractor: BluetoothInteractor
 
     val playing = androidx.compose.runtime.mutableStateOf(false)
 
@@ -32,12 +33,17 @@ class MainViewModel @Inject constructor(
         }*/
     }
 
+    @SuppressLint("MissingPermission")
     fun playFile(){
 //        AudioSystem.print()
 
         Timber.tag(TAG).i("Button pressed")
 
-        scanner.scan()
+//        bluetoothInteractor.scan()
+
+        val device = bluetoothInteractor.getDevice("00:23:02:39:D9:09")
+        val bondCreated = device.createBond()
+        Timber.tag(TAG).i("Bond was created: $bondCreated")
 
         viewModelScope.launch {
             playing.value = true

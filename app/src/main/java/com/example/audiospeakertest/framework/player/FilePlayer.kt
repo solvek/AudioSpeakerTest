@@ -18,6 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 class FilePlayer(private val context: Context) : Player {
 
     private val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    private var mediaPlayer: MediaPlayer? = null
 
     init {
         audioManager.registerAudioDeviceCallback(object : AudioDeviceCallback() {
@@ -39,7 +40,7 @@ class FilePlayer(private val context: Context) : Player {
 //        audioManager.isSpeakerphoneOn = true
 //        audioManager.isBluetoothScoOn = false
 
-        val mediaPlayer: MediaPlayer = MediaPlayer.create(context, R.raw.audio)
+        mediaPlayer = MediaPlayer.create(context, R.raw.long_music)
         suspendCoroutine<Unit> { cont ->
             try {
                 mediaPlayer.setOnCompletionListener {
@@ -56,7 +57,9 @@ class FilePlayer(private val context: Context) : Player {
     }
 
     override fun stop() {
-//        mediaPlayer.pause()
+        mediaPlayer?.let {
+            it.pause()
+        }
     }
 
     private fun printDevices(devices: Array<out AudioDeviceInfo>?){
